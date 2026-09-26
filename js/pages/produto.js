@@ -1,4 +1,4 @@
-import { findProduct, formatBRL } from "../data.js";
+import { findProduct, formatBRL, productImage } from "../data.js";
 import { addProduct } from "../cart.js";
 import { renderShell } from "../layout.js";
 
@@ -19,8 +19,8 @@ if (!product) {
   main.innerHTML = `
     <div class="wrap" style="max-width:900px">
       <div class="grid grid-2" style="align-items:start">
-        <div class="img-placeholder" style="aspect-ratio:1/1;border-radius:16px">
-          <span class="micro">foto do produto 1:1</span>
+        <div style="aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:var(--soft)">
+          <img src="${productImage(product)}" alt="${product.name}" style="width:100%;height:100%;object-fit:cover" />
         </div>
         <div>
           <p class="micro">${product.categorySlug} · SKU ${product.sku}</p>
@@ -72,10 +72,11 @@ if (!product) {
       qty = Math.min(product.stock, qty + 1);
       qtyValue.textContent = qty;
     });
-    document.getElementById("btn-add").addEventListener("click", (e) => {
+    const btnAdd = document.getElementById("btn-add");
+    btnAdd.addEventListener("click", () => {
       addProduct({ id: product.slug, name: product.name, unitPrice: product.price, qty });
-      e.currentTarget.textContent = "Adicionado ✓";
-      setTimeout(() => (e.currentTarget.textContent = "Adicionar ao carrinho"), 1200);
+      btnAdd.textContent = "Adicionado ✓";
+      setTimeout(() => (btnAdd.textContent = "Adicionar ao carrinho"), 1200);
     });
     document.getElementById("btn-buy").addEventListener("click", () => {
       addProduct({ id: product.slug, name: product.name, unitPrice: product.price, qty });
