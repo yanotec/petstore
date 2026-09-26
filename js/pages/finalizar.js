@@ -75,9 +75,7 @@ if (lines.length === 0) {
       <div id="success-box" style="display:none;text-align:center;padding:60px 0">
         <h2>Pedido confirmado! 🎉</h2>
         <div id="pix-box" style="display:none;margin-top:16px">
-          <div class="img-placeholder" style="width:200px;height:200px;margin:0 auto;border-radius:16px">
-            <span class="micro">QR code Pix</span>
-          </div>
+          <img src="./images/qrcode.png" alt="QR code Pix" style="width:200px;height:200px;margin:0 auto;border-radius:16px;border:1px solid var(--line);display:block" />
           <p style="margin-top:12px;font-size:14px;color:var(--ink2)">Valor congelado — código copia e cola:</p>
           <code style="display:block;margin-top:4px;font-size:12px;word-break:break-all">00020126360014BR.GOV.BCB.PIX0114PETHUB-DEMO520400005303986540${(total + 14.9).toFixed(2)}5802BR</code>
         </div>
