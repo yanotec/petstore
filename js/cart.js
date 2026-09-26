@@ -1,5 +1,15 @@
 // Carrinho — estado em localStorage (nesta versão estática não há sessão/servidor).
-import { formatBRL } from "./data.js";
+import { formatBRL, findProduct, findService, productImage, serviceImage } from "./data.js";
+
+function lineImage(l) {
+  if (l.kind === "product") {
+    const product = findProduct(l.id);
+    return product ? productImage(product) : null;
+  }
+  const slug = l.id.slice(0, l.id.lastIndexOf("-"));
+  const service = findService(slug);
+  return service ? serviceImage(service) : null;
+}
 
 const CART_KEY = "pethub.cart.loja";
 
@@ -94,7 +104,9 @@ export function renderCart() {
         .map(
           (l) => `
         <div class="cart-line" data-id="${l.id}">
-          <div class="thumb img-placeholder"></div>
+          <div class="thumb ${lineImage(l) ? "" : "img-placeholder"}">${
+            lineImage(l) ? `<img src="${lineImage(l)}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:10px" />` : ""
+          }</div>
           <div class="info">
             <p class="name">${l.name}</p>
             ${l.meta ? `<p class="micro">${l.meta}</p>` : ""}
