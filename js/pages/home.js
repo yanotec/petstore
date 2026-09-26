@@ -16,7 +16,7 @@ const maisVendidos = PRODUCTS.slice(2, 6);
 document.getElementById("main").innerHTML = `
   <div class="wrap">
     <section class="hero">
-      <div class="img-placeholder"></div>
+      <img src="./images/hero.png" alt="" class="hero-image" />
       <div class="hero-content">
         <p class="micro" style="color:rgba(255,255,255,.7)">cupom PET10 no primeiro pedido</p>
         <h1>Tudo para o seu pet, entregue hoje</h1>
