@@ -53,7 +53,7 @@ function renderCategoryBar() {
       ${CATEGORIES.map(
         (c) => `<a href="./busca.html?cat=${c.slug}" class="cat-pill ${
           activeCat === c.slug ? "active" : ""
-        }"><span class="cat-dot"></span>${c.name}</a>`
+        }"><span class="cat-dot"><img src="${c.image}" alt="" /></span>${c.name}</a>`
       ).join("")}
     </div>
     <div style="flex:none" id="theme-switcher-slot"></div>`;
@@ -68,11 +68,14 @@ function renderFooter() {
   footer.className = "site-footer";
   footer.innerHTML = `
     <div class="footer-grid">
-      <div>
-        <h4>PetHub</h4>
-        <p style="font-size:14px;color:rgba(255,255,255,.7);margin-top:8px">
-          Rua das Flores, 123 — Centro<br />Seg a sáb, 8h às 20h
-        </p>
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <img src="./images/loja.png" alt="" style="width:56px;height:56px;border-radius:12px;object-fit:cover;flex:none" />
+        <div>
+          <h4>PetHub</h4>
+          <p style="font-size:14px;color:rgba(255,255,255,.7);margin-top:8px">
+            Rua das Flores, 123 — Centro<br />Seg a sáb, 8h às 20h
+          </p>
+        </div>
       </div>
       <div>
         <p class="micro" style="color:rgba(255,255,255,.6)">Categorias</p>
