@@ -1,4 +1,4 @@
-import { formatBRL } from "./data.js";
+import { formatBRL, productImage, serviceImage } from "./data.js";
 import { addProduct } from "./cart.js";
 
 export function productCardHtml(p) {
@@ -6,8 +6,8 @@ export function productCardHtml(p) {
   const discountPct = p.compareAt ? Math.round((1 - p.price / p.compareAt) * 100) : null;
   return `
     <div class="card product-card" data-product-card="${p.slug}">
-      <a href="./produto.html?slug=${p.slug}" class="thumb img-placeholder">
-        <span class="micro">foto do produto 1:1</span>
+      <a href="./produto.html?slug=${p.slug}" class="thumb">
+        <img src="${productImage(p)}" alt="${p.name}" loading="lazy" />
         ${discountPct ? `<span class="tag tag-accent">−${discountPct}%</span>` : ""}
         ${outOfStock ? `<span class="tag tag-dark">Sem estoque</span>` : ""}
       </a>
@@ -29,9 +29,12 @@ export function productCardHtml(p) {
 }
 
 export function serviceCardHtml(s) {
+  const image = serviceImage(s);
   return `
     <a href="./servico.html?slug=${s.slug}" class="card service-card">
-      <div class="thumb img-placeholder"><span class="micro">foto do serviço</span></div>
+      <div class="thumb ${image ? "" : "img-placeholder"}">
+        ${image ? `<img src="${image}" alt="${s.name}" loading="lazy" />` : `<span class="micro">foto do serviço</span>`}
+      </div>
       <div class="body">
         <span style="font-size:14px;font-weight:500">${s.name}</span>
         <p class="desc">${s.description}</p>
