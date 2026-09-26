@@ -1,4 +1,4 @@
-import { findService, formatBRL } from "../data.js";
+import { findService, formatBRL, serviceImage } from "../data.js";
 import { quoteService } from "../pricing.js";
 import { addService } from "../cart.js";
 import { renderShell } from "../layout.js";
@@ -23,13 +23,18 @@ if (!service) {
     returnBy: "CLIENTE",
   };
   const booked = [];
+  const image = serviceImage(service);
 
   main.innerHTML = `
     <div class="wrap" style="max-width:1040px">
       <div style="display:grid;gap:32px;grid-template-columns:260px 1fr 280px" id="service-grid">
         <div>
-          <div class="img-placeholder" style="aspect-ratio:1/1;border-radius:16px">
-            <span class="micro">foto do serviço</span>
+          <div class="${image ? "" : "img-placeholder"}" style="aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:var(--soft)">
+            ${
+              image
+                ? `<img src="${image}" alt="${service.name}" style="width:100%;height:100%;object-fit:cover" />`
+                : `<span class="micro">foto do serviço</span>`
+            }
           </div>
           <h1 style="margin-top:12px;font-size:22px">${service.name}</h1>
           <p class="num" style="margin-top:4px;font-weight:600;color:var(--accent)">a partir de ${formatBRL(service.basePrice)}</p>
