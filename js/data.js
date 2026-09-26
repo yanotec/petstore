@@ -1,13 +1,26 @@
 // Dados mockados — ver design_handoff_pethub/docs/06-modelo-de-dados.md (seed)
 export const CATEGORIES = [
-  { slug: "racao", name: "Ração" },
-  { slug: "gatos", name: "Gatos" },
-  { slug: "higiene", name: "Higiene" },
-  { slug: "petiscos", name: "Petiscos" },
-  { slug: "acessorios", name: "Acessórios" },
-  { slug: "brinquedos", name: "Brinquedos" },
-  { slug: "banho-tosa", name: "Banho & tosa" },
+  { slug: "racao", name: "Ração", image: "./images/racao.png" },
+  { slug: "gatos", name: "Gatos", image: "./images/gato.png" },
+  { slug: "higiene", name: "Higiene", image: "./images/higiene.png" },
+  { slug: "petiscos", name: "Petiscos", image: "./images/petisco.png" },
+  { slug: "acessorios", name: "Acessórios", image: "./images/acessorio.png" },
+  { slug: "brinquedos", name: "Brinquedos", image: "./images/brinquedo.png" },
+  { slug: "banho-tosa", name: "Banho & tosa", image: "./images/banho.png" },
 ];
+
+const CATEGORY_IMAGE = Object.fromEntries(CATEGORIES.map((c) => [c.slug, c.image]));
+
+/** Ilustração provisória por categoria (ver assets/images) — foto real do produto entra via upload no backoffice. */
+export function productImage(product) {
+  return CATEGORY_IMAGE[product.categorySlug];
+}
+
+const SERVICE_IMAGE = { banho: "./images/banho.png", tosa: "./images/tosa.png" };
+
+export function serviceImage(service) {
+  return SERVICE_IMAGE[service.slug] ?? null;
+}
 
 export const PRODUCTS = [
   {
