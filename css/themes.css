@@ -1,0 +1,193 @@
+/* Variáveis de tema — aplicar data-theme e data-mode no <html>. */
+:root, [data-theme="ambar"][data-mode="light"] {
+  --brand: #C98A16;
+  --brand-ink: #1B1408;
+  --accent: #E1691E;
+  --deep: #3A2A18;
+  --darker: #2C2015;
+  --ink: #211A11;
+  --ink2: #6A5B49;
+  --line: #E7DCCA;
+  --surface: #FBF6EC;
+  --card: #FFFFFF;
+  --soft: #F4E9D6;
+  --ok: #2F7A49;
+  --warn-fg: #8A5A10;
+  --danger-fg: #A1281E;
+}
+[data-theme="ambar"][data-mode="dark"] {
+  --brand: #C98A16;
+  --brand-ink: #1B1408;
+  --accent: #E1691E;
+  --deep: #21170C;
+  --darker: #0E0A05;
+  --ink: #F6EEDF;
+  --ink2: #B6A387;
+  --line: #3A2D1E;
+  --surface: #1A130B;
+  --card: #241B11;
+  --soft: #33271A;
+  --ok: #6FC08C;
+  --warn-fg: #E9A83C;
+  --danger-fg: #F08076;
+}
+[data-theme="aco"][data-mode="light"] {
+  --brand: #2F6DB5;
+  --brand-ink: #FFFFFF;
+  --accent: #E0552B;
+  --deep: #1F2A35;
+  --darker: #161E27;
+  --ink: #151A20;
+  --ink2: #5A6472;
+  --line: #DCE2EA;
+  --surface: #F5F7FA;
+  --card: #FFFFFF;
+  --soft: #E8EEF6;
+  --ok: #24754E;
+  --warn-fg: #8A5A10;
+  --danger-fg: #A1281E;
+}
+[data-theme="aco"][data-mode="dark"] {
+  --brand: #2F6DB5;
+  --brand-ink: #FFFFFF;
+  --accent: #E0552B;
+  --deep: #0F1820;
+  --darker: #070B0F;
+  --ink: #E9EEF5;
+  --ink2: #93A1B4;
+  --line: #2A3542;
+  --surface: #0E141B;
+  --card: #161E27;
+  --soft: #1F2A35;
+  --ok: #6FC08C;
+  --warn-fg: #E9A83C;
+  --danger-fg: #F08076;
+}
+[data-theme="papel"][data-mode="light"] {
+  --brand: #3E8F7C;
+  --brand-ink: #FFFFFF;
+  --accent: #D8557F;
+  --deep: #25322F;
+  --darker: #1B2523;
+  --ink: #18201E;
+  --ink2: #5C6B66;
+  --line: #DCE6E3;
+  --surface: #F5F9F7;
+  --card: #FFFFFF;
+  --soft: #E5F0EC;
+  --ok: #24754E;
+  --warn-fg: #8A5A10;
+  --danger-fg: #A1281E;
+}
+[data-theme="papel"][data-mode="dark"] {
+  --brand: #3E8F7C;
+  --brand-ink: #FFFFFF;
+  --accent: #D8557F;
+  --deep: #101C1A;
+  --darker: #070C0B;
+  --ink: #E6EFEC;
+  --ink2: #93A8A2;
+  --line: #27332F;
+  --surface: #0D1412;
+  --card: #141D1A;
+  --soft: #1B2523;
+  --ok: #6FC08C;
+  --warn-fg: #E9A83C;
+  --danger-fg: #F08076;
+}
+[data-theme="capim"][data-mode="light"] {
+  --brand: #6E9A1F;
+  --brand-ink: #15200A;
+  --accent: #B8672A;
+  --deep: #3B2A1C;
+  --darker: #2B1F14;
+  --ink: #1F1A12;
+  --ink2: #5E5A45;
+  --line: #E0E3CC;
+  --surface: #F7F8EE;
+  --card: #FFFFFF;
+  --soft: #EAF0D6;
+  --ok: #2F7A49;
+  --warn-fg: #8A5A10;
+  --danger-fg: #A1281E;
+}
+[data-theme="capim"][data-mode="dark"] {
+  --brand: #6E9A1F;
+  --brand-ink: #15200A;
+  --accent: #B8672A;
+  --deep: #181D0F;
+  --darker: #0A0C06;
+  --ink: #EEF2E2;
+  --ink2: #A9B08F;
+  --line: #343A26;
+  --surface: #12150C;
+  --card: #1B2013;
+  --soft: #262D1A;
+  --ok: #6FC08C;
+  --warn-fg: #E9A83C;
+  --danger-fg: #F08076;
+}
+[data-theme="brasil"][data-mode="light"] {
+  --brand: #F2C230;
+  --brand-ink: #1A1605;
+  --accent: #1E7A45;
+  --deep: #12452B;
+  --darker: #0C321F;
+  --ink: #14201A;
+  --ink2: #56645B;
+  --line: #DCE6DA;
+  --surface: #F6FAF3;
+  --card: #FFFFFF;
+  --soft: #FBF1C8;
+  --ok: #1E7A45;
+  --warn-fg: #8A5A10;
+  --danger-fg: #A1281E;
+}
+[data-theme="brasil"][data-mode="dark"] {
+  --brand: #F2C230;
+  --brand-ink: #1A1605;
+  --accent: #1E7A45;
+  --deep: #0D1D15;
+  --darker: #050B08;
+  --ink: #EAF3EC;
+  --ink2: #9AB0A1;
+  --line: #253A2E;
+  --surface: #0B1510;
+  --card: #122019;
+  --soft: #1A2C22;
+  --ok: #6FC08C;
+  --warn-fg: #E9A83C;
+  --danger-fg: #F08076;
+}
+[data-theme="magenta"][data-mode="light"] {
+  --brand: #C2267A;
+  --brand-ink: #FFFFFF;
+  --accent: #23855A;
+  --deep: #3A1530;
+  --darker: #2A0F23;
+  --ink: #221620;
+  --ink2: #6A5563;
+  --line: #EBD9E4;
+  --surface: #FBF5F8;
+  --card: #FFFFFF;
+  --soft: #F6E3EE;
+  --ok: #1F7A4E;
+  --warn-fg: #8A5A10;
+  --danger-fg: #A1281E;
+}
+[data-theme="magenta"][data-mode="dark"] {
+  --brand: #C2267A;
+  --brand-ink: #FFFFFF;
+  --accent: #23855A;
+  --deep: #1B0E18;
+  --darker: #0A0509;
+  --ink: #F5EAF1;
+  --ink2: #B79CAD;
+  --line: #3A2433;
+  --surface: #150B12;
+  --card: #1F111B;
+  --soft: #2C1827;
+  --ok: #6FC08C;
+  --warn-fg: #E9A83C;
+  --danger-fg: #F08076;
+}
